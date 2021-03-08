@@ -26,11 +26,24 @@ namespace METODY
             }
             return soucet;
         }
-        
+        bool prvocislo(int a)
+        {
+            if (a <= 1) return false;
+            if (a == 2) return true;
+            for (int i = 3; i < a; i++)
+            {
+                if (a % i == 0) return false;
+            }
+            return true;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
                 int a = Convert.ToInt32(textBox1.Text);
                 label1.Text = CifLichSoucet(a).ToString();
+
+            int b = Convert.ToInt32(textBox1.Text);
+            label2.Text = prvocislo(b).ToString();
 
         }
     }
